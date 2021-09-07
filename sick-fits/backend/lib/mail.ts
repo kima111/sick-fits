@@ -42,7 +42,7 @@ export interface MailResponse {
   }
   
 
-export async function sendPassswordResetEmail(
+export async function sendPasswordResetEmail(
     resetToken: string, 
     to: string
     ):Promise<void>{
@@ -53,7 +53,7 @@ export async function sendPassswordResetEmail(
         subject: 'Your password reset token!',
         html: makeANiceEmail(`Your Password Reset Token is here!
         <a href="${process.env.FRONTEND_URL}/reset?token=${resetToken}">Click Here to reset</a>
-        `)
+        `),
     })) as MailResponse
     if(process.env.MAIL_USER.includes('ethereal.email')){
         console.log(`Message Sent! Preview it at ${getTestMessageUrl(info)}`)

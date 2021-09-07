@@ -11,8 +11,13 @@ const RESET_MUTATION = gql`
 mutation RESET_MUTATION(
     $email: String!
     $password: String!
-    $token: String!){
-    redeemUserPasswordResetToken(email: $email, token: $token, password: $password){
+    $token: String!
+    ){
+    redeemUserPasswordResetToken(
+        email: $email 
+        token: $token
+        password: $password
+        ){
         code
         message
     }
@@ -28,7 +33,7 @@ export default function Reset({token}){
     const [reset, {data, loading, error}] = useMutation(RESET_MUTATION, {
         variables: inputs,
     })
-    const successfulError = data?.redeemUserPasswordResetToken?.code ? data?.redeemUserPasswordResetToken:undefined;
+    const successfulError = data?.redeemUserPasswordResetToken?.code ? data?.redeemUserPasswordResetToken : undefined;
 
 
 

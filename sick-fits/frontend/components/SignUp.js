@@ -1,14 +1,16 @@
 import Form from './styles/Form'
 import useForm from '../lib/useForm'
-import { isTSExpressionWithTypeArguments } from '@babel/types'
 import gql from 'graphql-tag'
-import { CURRENT_USER_QUERY } from './User'
 import { useMutation } from '@apollo/client'
 import Error from './ErrorMessage'
 
 
 const SIGNUP_MUTATION = gql`
-mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!){
+mutation SIGNUP_MUTATION(
+    $email: String! 
+    $name: String! 
+    $password: String!
+    ){
     createUser(data: {
         email: $email,
         name: $name,

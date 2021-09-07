@@ -14,7 +14,7 @@ mutation REQUEST_RESET_MUTATION($email: String!){
         message
     }
 }
-`
+`;
 
 export default function RequestReset(){
     const {inputs, handleChange, resetForm} = useForm({

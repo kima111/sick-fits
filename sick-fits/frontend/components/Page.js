@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './Header'
 import styled, { createGlobalStyle } from 'styled-components'
-import SingleProduct from './SingleProduct'
+
 
 const GlobalStyles = createGlobalStyle`
 @font-face {
